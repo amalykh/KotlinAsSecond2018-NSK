@@ -64,7 +64,7 @@ fun digitNumber(n: Int): Int {
     var digits = 0
     if (n == 0) return 1
     var number = n
-    while (number > 0) {
+    while (number != 0) {
         number /= 10;
         ++digits
     }
@@ -106,11 +106,10 @@ fun lcm(m: Int, n: Int) = m / gcd(m, n) * n
  * Для заданного числа n > 1 найти минимальный делитель, превышающий 1
  */
 fun minDivisor(n: Int): Int {
-    for (i in 2..n) {
+    for (i in 2..(Math.sqrt(n.toDouble()).toInt()+1)) {
         if (n % i == 0) return i
     }
-    assert(false) // n is always divisor of n
-    return 0
+    return n
 }
 
 /**
@@ -118,13 +117,7 @@ fun minDivisor(n: Int): Int {
  *
  * Для заданного числа n > 1 найти максимальный делитель, меньший n
  */
-fun maxDivisor(n: Int): Int {
-    for (i in n-1 downTo 1) {
-        if (n % i == 0) return i
-    }
-    assert(false) // 1 is always divisor of n
-    return 0
-}
+fun maxDivisor(n: Int): Int = n / minDivisor(n)
 
 /**
  * Простая
@@ -161,6 +154,7 @@ fun squareBetweenExists(m: Int, n: Int): Boolean {
  * Нужную точность считать достигнутой, если очередной член ряда меньше eps по модулю
  */
 fun sin(x: Double, eps: Double): Double {
+    if (x < 0) return -sin(-x, eps)
     val angle = x.rem(2.0 * Math.PI)
     var curSign = 1
     var curPart = angle / 1.0
