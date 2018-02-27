@@ -170,7 +170,7 @@ fun polynom(p: List<Double>, x: Double): Double {
  *
  * Обратите внимание, что данная функция должна изменять содержание списка list, а не его копии.
  */
-fun accumulate(list: MutableList<Double>): MutableCollection<Double> {
+fun accumulate(list: MutableList<Double>): MutableList<Double> {
     var sumBefore = 0.0
     list.forEachIndexed { i, d ->
         sumBefore += d
