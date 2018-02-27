@@ -323,8 +323,8 @@ fun russianThreeDigit(n: Int, thousands: Boolean): List<String> {
         14   -> res.add("четырнадцать")
         15   -> res.add("пятнадцать")
         16   -> res.add("шестнадцать")
-        17   -> res.add("семьнадцать")
-        18   -> res.add("восемьнадцать")
+        17   -> res.add("семнадцать")
+        18   -> res.add("восемнадцать")
         19   -> res.add("девятнадцать")
         else -> {
             res.add(tens[n / 10 % 10])
