@@ -57,12 +57,12 @@ fun timeForHalfWay(t1: Double, v1: Double,
     if (t1 * v1 < distRemained) {
         distRemained -= t1 * v1
         resTime += t1
-    } else return resTime + distRemained / v1;
+    } else return resTime + distRemained / v1
     if (t2 * v2 < distRemained) {
-        distRemained -= t2 * v2;
-        resTime += t2;
-    } else return resTime + distRemained / v2;
-    return resTime + distRemained / v3;
+        distRemained -= t2 * v2
+        resTime += t2
+    } else return resTime + distRemained / v2
+    return resTime + distRemained / v3
 }
 /**
  * Простая
